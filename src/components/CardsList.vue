@@ -1,11 +1,13 @@
 <script>
 import axios from "axios";
 import CardsListItem from "./CardsListItem.vue";
+import CardsListSelect from "./CardsListSelect.vue";
 
 export default {
     name: "CardsList",
     components: {
-        CardsListItem
+        CardsListItem,
+        CardsListSelect
     },
     data: () => ({
         apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
@@ -26,6 +28,7 @@ export default {
 </script>
 
 <template>
+    <CardsListSelect />
     <div class="row g-0">
         <CardsListItem v-for="card in cardsList" :key="card.id" :src="card.card_images[0].image_url" :name="card.name"
             :type="card.archetype" />
