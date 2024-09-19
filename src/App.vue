@@ -2,6 +2,7 @@
 import AppMain from "./components/AppMain.vue";
 
 export default {
+    name: "App",
     components: {
         AppMain
     }
@@ -13,6 +14,6 @@ export default {
 </template>
 
 <style lang="scss">
-@use "bootstrap/scss/bootstrap.scss";
+@use "../node_modules/bootstrap/scss/bootstrap.scss";
 @use "./styles/generic.scss" as *;
 </style>
