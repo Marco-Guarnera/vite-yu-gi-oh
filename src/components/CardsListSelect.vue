@@ -5,6 +5,7 @@ export default {
     name: "CardsListSelect",
     data: () => ({
         apiUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
+        selectedInput: "All",
         // Struttura dati
         list: []
     }),
@@ -22,7 +23,7 @@ export default {
 </script>
 
 <template>
-    <select class="form-select">
+    <select class="form-select" v-model="selectedInput" @change="$emit('selectInput', selectedInput)">
         <option selected>All</option>
         <option v-for="(item, i) in list" :key="i" v-text="item.archetype_name"></option>
     </select>
